@@ -1,41 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>PORTFOLIO</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UFT-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-	<header>PORTFOLIO</header>
 
-	<div class="container">
-
-		<div class="left">
-
-
-
-		<%= yield(:text) %>
-
-
-			</div>
-
-
-		<div id="box" class="content">
-
-
-		<%= yield(:page) %>
-
-
+	<header>
+		<!-- logo -->
+		<div class="logo">
+			<a href="/"><img src="images/logo.png"></a>
 		</div>
-
-		<footer>
-			<ul>
-				<li><a href="home.html" target="iframe">HOME</a></li> 
-				<li><a href="about.html" target="iframe">ABOUT</a></li>
-				<li><a href="contact.html" target="iframe">CONTACT</a></li>
+	<nav>
+		<!-- header and navigation -->
+			<ul id="header-content">
+				<li><a href="about">ABOUT</a></li>
+				<li><a href="services">SERVICES</a></li>
+				<li><a href="gallery">GALLERY</a></li>
+				<li><a href="contact">CONTACT US</a></li>
 			</ul>
-		</footer>
-	</div>
+		
+	</nav>
+	</header>
+
+<div class="content">
 
 
+<%= yield %>
+	
+
+</div>
 </body>
 </html>

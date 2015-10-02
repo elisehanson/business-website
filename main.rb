@@ -4,7 +4,7 @@
 require 'sinatra'
 
   get '/' do    
-   erb :home
+   erb :home, :layout => false
   end
 
   get '/services' do    
@@ -20,7 +20,7 @@ require 'sinatra'
   end
 
  get '/contact' do    
-   erb :about
+   erb :contact
   end
 
 
