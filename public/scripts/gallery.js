@@ -1,7 +1,9 @@
           
  $(document).ready(function() {
-            
-            $('#carousel ul').animate({marginLeft:'-600px'},2000,function(){
+ 	alert('The document is ready!');
+      }
+      );      
+            $("#carousel ul li img").animate({marginLeft:'-600px'},2000,function(){
                 
                 setInterval(function(){
                 $(this).find("li:last").after($(this).find("li:first"));
