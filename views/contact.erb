@@ -4,19 +4,82 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<style>
+label {
+	font-family: helvetica;
+	font-size: 10px;
+}
+input {
+	border: 1px solid black;
+	padding:10px;
+	}
+
+textarea {
+	border: 1px solid black;
+	padding:10px;
+}
+
+.and {
+	font-size: 20px;
+	font-style: italic;
+	font-weight:100;
+}
+
+.hours {
+	padding-top:50px;
+}
+
+</style>
 </head>
 <body>
 
-	<img class="titles" src="images/contact.png">
+<div class="titlecontainer"> 
+	<div class="titles left"> contact</div>
+	<div class="description" style="text-align:left;"> 
 
-	<p> 
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+
+<!-- 	<form method="POST" action="/contact-us-post">
+      <textarea name="message_body"></textarea>
+      <input type="submit">
+    </form> -->
+
+
+
+    <div id='contact-box' class="group">
+  <div class="span6 clear">
+    <form method="POST" action="/contact-us-post" class="well">
+
+      <label for="name"></label>
+      <input type="text" name="name" class="span4" placeholder="your name">
+      <span class="and"> & </span>
+
+      <label for="email"></label>
+      <input type="text" name="email" class="span4" placeholder="email@address"><br>
+     
+      <label for="to"></label><br>
+      <textarea name="message" cols='100' rows="10" placeholder="your message"></textarea><br>
+      <button type="submit" class="btn" value="Send">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+<div class="hours">
+    <p><strong>Hours : </strong> Monday to Sunday / 10am to 7pm
+    <p><em>Open 7 days a week for your pleasure</em></p>
+  
+    
+    <p><strong>Location : </strong> 700 Fifth Avenue, New York, NY 10016</p>
+ 
+	</div>
+	 </div>
+</div>
+
+
+
+
 	
 
 </body>
