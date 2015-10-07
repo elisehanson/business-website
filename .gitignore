@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 .DS_Store
 */.DS_Store
+=======
+.DS__Store
+*/.DS.Store
+
+>>>>>>> b3884b78d2ca62a153cc2d39c77a8321105e64e2

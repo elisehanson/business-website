@@ -1,10 +1,7 @@
-
-
-
 require 'sinatra'
 
   get '/' do    
-   erb :home
+   erb :home, :layout => false
   end
 
   get '/services' do    
@@ -20,9 +17,11 @@ require 'sinatra'
   end
 
  get '/contact' do    
-   erb :about
+   erb :contact
   end
 
+
+require 'sinatra'
 
 
 
@@ -56,4 +55,21 @@ require "sinatra"
 #get "/contact-us" do
 #    erb :form
 #end
+
+def send_email(message_body, name_input, email_input)
+ m = Mandrill::API.new 
+message = {  
+  :subject=> "Hello from the Mandrill API",  
+  :from_name=> name_input,  
+  :text=> message_body,  
+  :to=>[{:email=> "recipient@dom.com", :name=> "Rec Name"}],  
+  :html=>"<html><h1>Hi <strong>message</strong>, how are you?</h1></html>",  
+  :from_email=>email_input } 
+end
+
+
+post "/contact-us-post" do
+  # this invokes the send_email method defined above
+  send_email(params[:message_body],params[:name_input],params[:email_input])
+end
 
