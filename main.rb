@@ -1,5 +1,9 @@
 require 'sinatra'
 
+require "mandrill"
+
+
+
   get '/' do    
    erb :home, :layout => false
   end
@@ -20,16 +24,6 @@ require 'sinatra'
    erb :contact
   end
 
-
-require 'sinatra'
-
-
-
-#load the mandrill gem
-require "mandrill"
-
-#load the sinatra gem
-require "sinatra"
 
 
 #this defines the send_email message

@@ -279,7 +279,6 @@ a:hover {
 /*  margin:10px;*/
   padding:10px;
 
-
 }
 
 .titlecontainer {
@@ -289,4 +288,28 @@ a:hover {
   text-align: center;
   clear:both;
   padding:75px;
+}
+
+label {
+  font-family: helvetica;
+  font-size: 10px;
+}
+input {
+  border: 1px solid black;
+  padding:10px;
+  }
+
+textarea {
+  border: 1px solid black;
+  padding:10px;
+}
+
+.and {
+  font-size: 20px;
+  font-style: italic;
+  font-weight:100;
+}
+
+.hours {
+  padding-top:50px;
 }
