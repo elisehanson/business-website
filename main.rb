@@ -1,7 +1,8 @@
+
+
 require 'sinatra'
 
 require "mandrill"
-
 
 
   get '/' do    
@@ -25,45 +26,40 @@ require "mandrill"
   end
 
 
-
-#this defines the send_email message
-#def send_email(message_body)
-#mandrill = Mandrill:API.new
-
- 
-#set message params
-#
-#message = {  
-#    :subject=> "Hello from the Mandrill API",  
-#    :from_name=> "Your name",  
-#    :text=> message_body,  
-#    :to=>[{:email=> "melissaphan09@yahoo.com", :name=> "Melissa Phan"}],  
-#    :html=>"<html><h1>(message_body)</h1></html>",  
-#    :from_email=>"sender@yourdomain.com" 
-#} 
-#    
-#    sending = mandrill.messages.send message 
-#    puts sending
-#end
-#
-#get "/contact-us" do
-#    erb :form
-#end
-
+# this defines the send_email method
 def send_email(message_body, name_input, email_input)
- m = Mandrill::API.new 
-message = {  
-  :subject=> "Hello from the Mandrill API",  
-  :from_name=> name_input,  
-  :text=> message_body,  
-  :to=>[{:email=> "recipient@dom.com", :name=> "Rec Name"}],  
-  :html=>"<html><h1>Hi <strong>message</strong>, how are you?</h1></html>",  
-  :from_email=>email_input } 
+ # create a new mandrill object
+  mandrill = Mandrill::API.new
+
+
+# set the message params
+# pay special attention to the keys
+  message = {  
+    :subject=> "Hello from the Mandrill API",  
+    :from_name=> name_input,  
+    :text=> message_body,  
+    :to=>[{:email=> "spa@spa.com", :name=> "Serein Spa"}],  
+    :html=>"<html><h1>Hi <strong>message</strong>, how are you?</h1></html>",  
+    :from_email=> email_input } 
+
+  # this calls the send method of the messages object within the mandrill object
+  # (class inception -> its defined internally as a class within a class)
+  sending = mandrill.messages.send message
+
+  # return the sending object, in this case its a Hash object
+  #   Hash object documentation -> http://ruby-doc.org/core-2.2.2/Hash.html
+  # this hash will give you information on if any errors that may occur, if it sent, 
+  #   as well as other relevant information
+  puts sending
 end
 
 
 post "/contact-us-post" do
-  # this invokes the send_email method defined above
+  # displays "sending email now" in the bash terminal
+  puts "sending email now"
+
+  # this invokes the send_email method we defined above
   send_email(params[:message_body],params[:name_input],params[:email_input])
 end
+
 
